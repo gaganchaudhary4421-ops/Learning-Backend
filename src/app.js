@@ -5,6 +5,9 @@ app.use(express.json());
 
 const notes = [];
 app.post("/notes", (req, res) => {
-  console.log(req.body);
+  notes.push(req.body);
+  res.status(201).send({
+    message: "Note created successfully",
+  });
 }); //Api call to create a note
 module.exports = app;
