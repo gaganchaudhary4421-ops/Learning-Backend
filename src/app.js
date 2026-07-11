@@ -12,5 +12,11 @@ app.post("/notes", async (req, res) => {
     message: "Note created successfully",
   });
 });
-
+app.get("notes", async (req, res) => {
+  const notes = await noteModel.find();
+});
+res.status(200).send({
+  message: "Note fetched successfully",
+  notes: notes,
+});
 module.exports = app;
