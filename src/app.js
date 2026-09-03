@@ -1,4 +1,5 @@
 const express = require("express");
 const app = express();
 
-module.exports = app;//exporting app to server.js
+module.exports = app; //exporting app to server.js
+//learning get method
