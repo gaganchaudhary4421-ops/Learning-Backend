@@ -5,4 +5,4 @@ const notes = [];
 app.post("/notes", (req, res) => {
   console.log(req.body);
 });
-module.exports = app; //exporting app to server.js
+module.exports = app;
