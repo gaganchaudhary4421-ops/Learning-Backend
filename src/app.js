@@ -1,4 +1,16 @@
 const express = require("express");
+const noteModel = require("noteModel");
+const app = express();
+app.use(express.json());
+const notes = [];
+app.post("/notes", (req, res) => {
+  const data = req.body;
+  res.status(201).json({
+    message: "Note created successfully",
+  });
+});
+
+const express = require("express");
 const noteModel = require("./models/models.js");
 const app = express();
 app.use(express.json());
@@ -13,4 +25,4 @@ app.post("/notes", async (req, res) => {
     message: "Note created successfully",
   });
 });
-module.exports = app;//
+module.exports = app; //
