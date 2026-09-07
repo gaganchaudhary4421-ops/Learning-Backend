@@ -19,4 +19,11 @@ app.get("/notes", async (req, res) => {
     notes: notes,
   });
 });
+app.delete("/notes/:index", async (req, res) => {
+  const index = req.params.index;
+  await noteModel.findOneAndDelete({ _id: index });
+  res.status(200).json({
+    message: "Note deleted successfully",
+  });
+});
 module.exports = app;
