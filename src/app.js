@@ -1,5 +1,6 @@
 const express = require("express");
 const multer = require("multer");
+const storageService = require("./services/storage.service.js");
 const app = express();
 app.use(express.json());
 
