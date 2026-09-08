@@ -9,6 +9,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 app.post("/create-post", upload.single("image"), async (req, res) => {
   console.log(req.body);
   console.log(req.file);
+  const result = await storageService.uploadFile(req.file.buffer);
 
   res.status(201).json({
     message: "Post created successfully",
