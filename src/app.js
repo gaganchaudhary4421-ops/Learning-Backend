@@ -3,7 +3,7 @@ const multer = require("multer");
 const app = express();
 app.use(express.json());
 
-const upload = multer({ storage: multer.memoryStorage });
+const upload = multer({ storage: multer.memoryStorage() });
 
 app.post("/create-post", upload.single("image"), async (req, res) => {
   console.log(req.body);
