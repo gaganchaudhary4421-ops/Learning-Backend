@@ -12,7 +12,7 @@ async function uploadFile(buffer) {
 
   return result;
 }
-
+//
 module.exports = {
   uploadFile,
 };
