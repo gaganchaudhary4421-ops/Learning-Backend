@@ -12,7 +12,7 @@ async function uploadFile(buffer) {
 
   return result;
 }
-//Learning api 
+//Learning ap
 module.exports = {
   uploadFile,
 };
