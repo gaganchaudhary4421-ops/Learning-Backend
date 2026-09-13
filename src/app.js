@@ -16,4 +16,5 @@ app.post("/create-post", upload.single("image"), async (req, res) => {
     message: "Post created successfully",
   });
 });
+// Learning Get Api
 module.exports = app;
