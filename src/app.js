@@ -17,4 +17,9 @@ app.post("/create-post", upload.single("image"), async (req, res) => {
   });
 });
 // Learning Get Api
+app.get("/create-post", (req, res) => {
+  res.status(200).json({
+    message: "Get request successful",
+  });
+});
 module.exports = app;
