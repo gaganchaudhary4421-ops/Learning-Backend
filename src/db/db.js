@@ -6,15 +6,9 @@ dns.setServers(["8.8.8.8", "1.1.1.1"]);
 const mongoose = require("mongoose");
 
 async function connectDB() {
-  try {
-    await mongoose.connect(
-      "mongodb+srv://Backend:b97PSKjF05hvDbtA@backend.jfrj2xn.mongodb.net/proect1",
-    );
+  await mongoose.connect(process.env.MONGO_URI);
 
-    console.log("Connected to MongoDB");
-  } catch (error) {
-    console.error("MongoDB connection failed:", error);
-  }
+  console.log("Connected to MongoDB");
 }
 
 module.exports = connectDB;
