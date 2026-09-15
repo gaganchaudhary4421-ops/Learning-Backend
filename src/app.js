@@ -20,5 +20,5 @@ app.post("/create-post", upload.single("image"), async (req, res) => {
     post,
   });
 });
-
+app.get("/posts", async (req, res) => {});
 module.exports = app;
