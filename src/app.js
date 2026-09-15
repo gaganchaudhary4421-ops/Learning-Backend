@@ -11,14 +11,15 @@ app.post("/create-post", upload.single("image"), async (req, res) => {
   console.log(req.body);
   console.log(req.file);
   const result = await storageService.uploadFile(req.file.buffer);
-  const postModle = await postModel.create({
+  const postModel = await postModel.create({
     title: req.body.title,
     description: req.body.description,
     imageUrl: result.url,
   });
-//created post api
+  //created post api
   res.status(201).json({
     message: "Post created successfully",
+    post,
   });
 });
 // Learning Get Api
