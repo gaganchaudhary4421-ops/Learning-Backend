@@ -16,7 +16,7 @@ app.post("/create-post", upload.single("image"), async (req, res) => {
     description: req.body.description,
     imageUrl: result.url,
   });
-
+//created post api
   res.status(201).json({
     message: "Post created successfully",
   });
