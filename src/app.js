@@ -1,6 +1,6 @@
 const express = require("express");
 const connectDB = require("./db/db");
-require("dotenv").config();
+const multer = require("multer");
 const app = express();
 app.use(express.json());
 module.exports = app;
