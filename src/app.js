@@ -5,5 +5,7 @@ const storageService = require("./services/storageService");
 const upload = multer({ storage: multer.memoryStorage() });
 const app = express();
 app.use(express.json());
-app.post("/create-post", upload.single("image"), async (req, res) => {});
+app.post("/create-post", upload.single("image"), async (req, res) => {
+  const result = await storageService.uploadImage(req.file.buffer);
+});
 module.exports = app;
