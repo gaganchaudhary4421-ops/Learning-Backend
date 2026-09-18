@@ -19,4 +19,5 @@ app.post("/create-post", upload.single("image"), async (req, res) => {
   });
 });
 module.exports = app;
-//write code again 
+//write code again
+//Connect database and imagekit
