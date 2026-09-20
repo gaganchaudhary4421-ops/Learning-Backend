@@ -1,21 +1,21 @@
 const express = require("express");
 const connectDB = require("./db/db");
-const postModle = require("./models/postModel");
+const postModel = require("./models/post.model.js");
 const multer = require("multer");
-const storageService = require("./services/storageService");
+const storageService = require("./services/storage.service.js");
 const upload = multer({ storage: multer.memoryStorage() });
 const app = express();
 app.use(express.json());
 app.post("/create-post", upload.single("image"), async (req, res) => {
-  const result = await storageService.uploadImage(req.file.buffer);
-  const postModel = await postModle.create({
+  const result = await uploadFile(req.file.buffer);
+  const postModel = await postModel.create({
     title: req.body.title,
     description: req.body.description,
     imageUrl: result.URL,
   });
   res.status(201).json({
     message: "Post created successfully",
-    post: postModel,
+    post ;
   });
 });
 module.exports = app;
