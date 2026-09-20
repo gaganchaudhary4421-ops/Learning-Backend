@@ -21,3 +21,4 @@ app.post("/create-post", upload.single("image"), async (req, res) => {
 module.exports = app;
 //write code again
 //Connect database and imagekit
+//Checking full functionality
