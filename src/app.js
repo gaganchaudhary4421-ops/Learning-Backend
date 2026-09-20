@@ -15,7 +15,7 @@ app.post("/create-post", upload.single("image"), async (req, res) => {
   });
   res.status(201).json({
     message: "Post created successfully",
-    post ;
+    post,
   });
 });
 module.exports = app;
