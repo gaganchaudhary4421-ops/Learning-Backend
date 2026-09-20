@@ -8,9 +8,8 @@ const app = express();
 app.use(express.json());
 app.post("/create-post", upload.single("image"), async (req, res) => {
   const result = await uploadFile(req.file.buffer);
-  const postModel = await postModel.create({
-    title: req.body.title,
-    description: req.body.description,
+  const post = await postModel.create({
+    caption: req.body.caption,
     imageUrl: result.URL,
   });
   res.status(201).json({
