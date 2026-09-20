@@ -3,6 +3,7 @@ const connectDB = require("./db/db");
 const postModel = require("./models/post.model.js");
 const multer = require("multer");
 const storageService = require("./services/storage.service.js");
+const { default: ImageKit } = require("@imagekit/nodejs");
 const upload = multer({ storage: multer.memoryStorage() });
 const app = express();
 app.use(express.json());
