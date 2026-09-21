@@ -8,7 +8,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 const app = express();
 app.use(express.json());
 
-app.post("/create-post", upload.single("image"), async (req, res) => {
+app.post("/posts", upload.single("image"), async (req, res) => {
   const result = await storageService.uploadFile(req.file.buffer);
   const post = await postModel.create({
     caption: req.body.caption,
