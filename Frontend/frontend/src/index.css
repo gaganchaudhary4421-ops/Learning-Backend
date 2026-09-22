@@ -8,7 +8,7 @@ body,
   height: 100%;
   width: 100%;
 }
-#create-post-section {
+.create-post-section {
   display: flex;
   justify-content: center;
   align-items: center;
