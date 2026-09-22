@@ -5,6 +5,9 @@ const createPost = () => {
     <div>
       <section className="create-post-section">
         <h1>Create Post</h1>
+        <form>
+          <input type="file" name="file" accept="image/*" />
+        </form>
       </section>
     </div>
   );
