@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+html {
+  font-family: Arial, sans-serif;
+}
 html,
 body,
 #root {
@@ -22,7 +25,7 @@ body,
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  background-color: antiquewhite;
+  background-color: rgb(234, 233, 232);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
