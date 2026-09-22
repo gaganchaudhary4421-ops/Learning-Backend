@@ -13,7 +13,7 @@ const createPost = () => {
             placeholder="Enter Caption"
             required
           />
-          <input type="button" name="submit" value="Submit" />
+          <button type="submit">Submit</button>
         </form>
       </section>
     </div>
