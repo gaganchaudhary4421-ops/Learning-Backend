@@ -8,6 +8,7 @@ const createPost = () => {
         <form>
           <input type="file" name="file" accept="image/*" />
           <input type="text" name="caption" required />
+          <input type="button" name="submit" value="Submit" />
         </form>
       </section>
     </div>
