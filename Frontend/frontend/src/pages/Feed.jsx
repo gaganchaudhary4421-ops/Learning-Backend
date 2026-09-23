@@ -3,12 +3,23 @@ import React, { useState } from "react";
 const Feed = () => {
   const [posts, setPosts] = useState([
     {
-      id: 1,
-      caption: "This is a sample caption",
-      image: "https://via.placeholder.com/150",
+      _id: "1",
+      image:
+        "https://images.unsplash.com/photo-1747096241806-82c763e28744?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D",
     },
   ]);
-  return <section className="feed-section"></section>;
+  return (
+    <section className="feed-section">
+      posts.length === 0 ? (
+      {posts.map((post) => (
+        <div key={post._id} className="post">
+          <img src={post.image} alt="Post" />
+        </div>
+      ))}
+      ):(
+      <h1>No posts available.</h1>)
+    </section>
+  );
 };
 
 export default Feed;
