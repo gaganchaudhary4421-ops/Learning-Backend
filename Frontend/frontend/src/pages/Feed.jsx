@@ -11,13 +11,14 @@ const Feed = () => {
   ]);
   return (
     <section className="feed-section">
-      {
-      posts.length === 0 ? (<p>No posts available.</p>) : (
-      {posts.map((post) => (
-        <div key={post._id} className="post">
-          <img src={post.image} alt="Post" />
-        </div>
-      ))}
+      {posts.length === 0 ? (
+        <p>No posts available.</p>
+      ) : (
+        posts.map((post) => (
+          <div key={post._id} className="post">
+            <img src={post.image} alt="Post" />
+          </div>
+        ))
       )}
     </section>
   );
