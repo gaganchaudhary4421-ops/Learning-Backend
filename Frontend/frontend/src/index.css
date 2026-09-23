@@ -58,18 +58,20 @@ body {
   font-size: 16px;
 }
 .feed-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: "100%";
+  width: "100%";
+  background-color: white;
+  padding: 20px;
+}
+.post {
   background: #f5f5f5;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   margin-bottom: 20px;
-}
-.post {
-  width: 300px;
-  padding: 20px;
-  background-color: rgb(234, 233, 232);
-  border-radius: 8px;
-
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
