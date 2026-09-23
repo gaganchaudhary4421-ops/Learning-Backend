@@ -17,6 +17,7 @@ const Feed = () => {
         posts.map((post) => (
           <div key={post._id} className="post">
             <img src={post.image} alt="Post" />
+            <p>{post.caption}</p>
           </div>
         ))
       )}
