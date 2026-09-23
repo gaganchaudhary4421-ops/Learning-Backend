@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CreatePost from "./pages/createPost";
+import feed from "./pages/Feed";
 const App = () => {
   return (
     <Router>
