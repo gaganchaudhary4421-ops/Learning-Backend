@@ -18,7 +18,7 @@ const Feed = () => {
       })
       .catch((err) => {
         console.log(err);
-      });
+      });//using axios to connect with backend
   }, []);
   return (
     <section className="feed-section">
