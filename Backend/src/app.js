@@ -8,6 +8,7 @@ const { default: ImageKit } = require("@imagekit/nodejs");
 const upload = multer({ storage: multer.memoryStorage() });
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.post("/posts", upload.single("image"), async (req, res) => {
   const result = await storageService.uploadFile(req.file.buffer);
