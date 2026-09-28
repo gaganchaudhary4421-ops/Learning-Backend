@@ -8,3 +8,4 @@ async function ConnectDB() {
     console.error("Connection failed", err);
   }
 }
+module.exports = ConnectDB;
