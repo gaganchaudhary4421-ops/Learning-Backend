@@ -1,9 +1,4 @@
-const app = require("./src/app.js");
-const connectDB = require("./src/db/db.js");
-const noteModel = require("./src/models/post.model.js");
-
-connectDB();
-
+const app = require("./src/app");
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
