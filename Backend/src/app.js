@@ -14,9 +14,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Create a post
 app.post("/posts", upload.single("image"), async (req, res) => {
   try {
+    console.log("File:", req.file);
+    console.log("Body:", req.body);
+
     if (!req.file) {
       return res.status(400).json({
         message: "Image is required",
@@ -24,6 +26,8 @@ app.post("/posts", upload.single("image"), async (req, res) => {
     }
 
     const result = await storageService.uploadFile(req.file.buffer);
+
+    console.log("Upload result:", result);
 
     const post = await postModel.create({
       caption: req.body.caption,
@@ -35,7 +39,7 @@ app.post("/posts", upload.single("image"), async (req, res) => {
       post,
     });
   } catch (error) {
-    console.error(error);
+    console.error("CREATE POST ERROR:", error);
 
     res.status(500).json({
       message: "Failed to create post",
