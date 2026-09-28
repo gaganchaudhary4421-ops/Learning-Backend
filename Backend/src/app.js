@@ -4,28 +4,61 @@ const postModel = require("./models/post.model.js");
 const multer = require("multer");
 const storageService = require("./services/storage.service.js");
 const cors = require("cors");
-const { default: ImageKit } = require("@imagekit/nodejs");
-const upload = multer({ storage: multer.memoryStorage() });
+
+const upload = multer({
+  storage: multer.memoryStorage(),
+});
+
 const app = express();
+
 app.use(express.json());
 app.use(cors());
 
+// Create a post
 app.post("/posts", upload.single("image"), async (req, res) => {
-  const result = await storageService.uploadFile(req.file.buffer);
-  const post = await postModel.create({
-    caption: req.body.caption,
-    imageUrl: result.URL,
-  });
-  res.status(201).json({
-    message: "Post created successfully",
-    post,
-  });
+  try {
+    if (!req.file) {
+      return res.status(400).json({
+        message: "Image is required",
+      });
+    }
+
+    const result = await storageService.uploadFile(req.file.buffer);
+
+    const post = await postModel.create({
+      caption: req.body.caption,
+      imageUrl: result.URL,
+    });
+
+    res.status(201).json({
+      message: "Post created successfully",
+      post,
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Failed to create post",
+      error: error.message,
+    });
+  }
 });
+
+// Get all posts
 app.get("/posts", async (req, res) => {
-  const posts = await postModel.find();
-  res.status(200).json({
-    message: "Posts fetched successfully",
-    posts,
-  });
+  try {
+    const posts = await postModel.find();
+
+    // Return the array directly
+    res.status(200).json(posts);
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Failed to fetch posts",
+      error: error.message,
+    });
+  }
 });
+
 module.exports = app;
