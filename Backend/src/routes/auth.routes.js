@@ -1,6 +1,6 @@
 const express = require("express");
 const { Router } = require("express");
 
-const routes = new Router();
+const router = express.Router();
 
 module.exports = routes;
