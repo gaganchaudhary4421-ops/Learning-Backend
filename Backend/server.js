@@ -7,6 +7,7 @@ const app = require("./src/app");
 const ConnectDB = require("./src/db/db"); //requiring db
 
 ConnectDB();
+addning and connecting database
 
 app.listen(3000, () => {
   //starting server
