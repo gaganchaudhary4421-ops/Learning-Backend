@@ -7,10 +7,7 @@ const app = require("./src/app");
 const ConnectDB = require("./src/db/db"); //requiring db
 
 ConnectDB();
-addning and connecting database
-lets study again
-starting
-lets start postgreSQL from tomorrow
+ 
 app.listen(3000, () => {
   //starting server
   console.log("Server is running on port 3000");
