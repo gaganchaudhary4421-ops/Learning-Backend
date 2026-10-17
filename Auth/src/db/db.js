@@ -8,3 +8,4 @@ async function ConnectDB() {
     console.error("Databser connection error", err);
   }
 }
+module.exports = ConnectDB;
